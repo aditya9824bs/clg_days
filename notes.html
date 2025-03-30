@@ -34,8 +34,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 90%;
-            max-width: 400px;
+            width: 100%;
+            max-width: 600px;
             overflow-y: auto;
             max-height: 80vh;
             padding: 20px;
@@ -46,44 +46,28 @@
         
         .card {
             background: rgba(255, 204, 221, 0.9);
-            padding: 20px;
+            padding: 30px;
             border-radius: 20px;
             box-shadow: 0 6px 12px rgba(255, 105, 180, 0.6);
             text-align: center;
-            width: 100%;
+            min-width: 300px;
             margin-bottom: 15px;
         }
         
         .card h2 {
             color: #ff6699;
-            font-size: 20px;
+            font-size: 24px;
         }
         
         .card p {
             color: #333;
-            font-size: 16px;
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                max-width: 90%;
-                max-height: 70vh;
-            }
-            .card {
-                padding: 15px;
-            }
-            .card h2 {
-                font-size: 18px;
-            }
-            .card p {
-                font-size: 14px;
-            }
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <video class="video-bg" autoplay loop muted>
-        <source src="/images/WhatsApp Video 2025-03-30 at 02.33.05_6f1811bc.mp4" type="video/mp4">
+        <source src="background-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     
