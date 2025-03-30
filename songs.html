@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .gallery-container {
+            background: #ffccdd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        video {
+            width: 350px;
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            background-color: #ff99bb;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff6699;
+        }
+    </style>
+    
+</head>
+<body>
+
+    
+    <div class="gallery-container">
+        <video id="videoPlayer" controls>
+            <source src="images/WhatsApp Video 2025-03-30 at 02.33.05_6f1811bc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controls">
+            <button onclick="prevVideo()">Previous</button>
+            <button onclick="nextVideo()">Next</button>
+        </div>
+    </div>
+    
+    <script>
+        const videos = [
+            "images/WhatsApp Video 2025-03-30 at 02.33.05_6f1811bc.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.40.31_355c667a.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.48.33_484878b1.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.48.52_14e5288f.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.48.53_bb41b8a8.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.49.57_d90a9491.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.51.38_4928a2b0.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.51.38_ae298b59.mp4",
+            "images/WhatsApp Video 2025-03-30 at 02.55.33_db3982a1.mp4"
+        ];
+        let currentIndex = 0;
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        function nextVideo() {
+            currentIndex = (currentIndex + 1) % videos.length;
+            videoPlayer.src = videos[currentIndex];
+            videoPlayer.play();
+        }
+
+        function prevVideo() {
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+            videoPlayer.src = videos[currentIndex];
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>
